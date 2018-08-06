@@ -683,23 +683,6 @@ class PolygonByPolarCoordinates:
         self.g = None
         return
 
-    def add_circ(self):
-
-
-        crs = QgsCoordinateReferenceSystem()
-        crs.createFromId(4326)
-        circularRing = QgsCircularStringV2()
-        circularRing.setPoints([
-            QgsPointV2(0, 0),
-            QgsPointV2(0, 10),
-            QgsPointV2(10, 10)]
-        )
-        geom_from_curve = QgsGeometry(circularRing)
-        self.rb.setToGeometry(geom_from_curve, self.layer)
-        # self.rb.addGeometry(geom_from_curve, self.layer)
-        self.iface.mapCanvas().refresh()
-
-        return
 
     def run(self):
         """Run method that performs all the real work"""
